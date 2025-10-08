@@ -83,3 +83,39 @@ body{
     padding: 1vw;
     opacity: 90%;
 }
+
+/* Main Page */
+
+.mainContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  min-width: 1.5;
+  min-height: 100vh;
+}
+
+.searchArea{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBox{
+  padding: 12px 20px 12px 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+}
+
+.searchBtn{
+  margin-top: 10px;
+  margin-left: -30px;
+  padding: 15px;
+  background-image: url('../assets/search_icon.svg');
+  background-repeat: no-repeat;
+  background-color: inherit;
+  border: 0;
+  cursor: pointer;
+}
