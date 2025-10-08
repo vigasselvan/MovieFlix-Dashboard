@@ -5,36 +5,46 @@ import { useState } from 'react';
 
 function MainPage(){
     const [MovieSearched, setMovieSearched] = useState('');
-    
+    const [data, setData] = useState(null);
+
     function searchMovie(){
-        const fetchData = async () => {
-      try {
-        let url = `http://www.omdbapi.com/?t=${MovieSearched}`;
-        const apiKey = process.env.api_key;
-        const response = await fetch(`http://www.omdbapi.com/?t=${MovieSearched}&apikey=${apiKey}`); // Replace with your API endpoint
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+      
+      const fetchData = async () => {
+        const parsedMovie = MovieSearched.replace(/ /g, '+');
+        try {
+          let url = `http://www.omdbapi.com/?t=${parsedMovie}&plot=full`;
+          const apiKey = import.meta.env.VITE_API_URL;
+          const response = await fetch(url + "&apikey=" + `${apiKey}`); // Replace with your API endpoint
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const json = await response.json();
+
+          setData(json); //its async and takes time, so untill that use json itself instead of data
+
+          if(!localStorage.getItem(json.Title)){
+            localStorage.setItem(json.Title, JSON.stringify(json));
+          }
+          // Retrieving JSON data
+          const storedData = JSON.parse(localStorage.getItem(json.Title));
+          console.log(storedData);
+          console.log(json.Poster);
+          // console.log(data);
+        } catch (error) {
+          console.log(error);
         }
-        const json = await response.json();
-        setData(json);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
+      };
 
-    fetchData();
+      fetchData();
     }
-
 
     function checkClick(e){
-        if(e.key === "Enter"){
-            searchMovie();
-        }else if(e.button === 0){
+        if(e.key === "Enter" || e.button === 0){
             searchMovie();
         }
     }
+
+    // const imgUrl = URL.createObjectURL(json.Poster);
 
     return (
         <>
@@ -45,6 +55,14 @@ function MainPage(){
                     <input type="text" name="search" placeholder="Search Movie.." onKeyDown={checkClick} className='searchBox' value={MovieSearched}
         onChange={(e) => setMovieSearched(e.target.value)}></input>
                     <button className='searchBtn' onClick={checkClick}>Search 🔍</button>
+                </div>
+
+                <div>
+                    {data !== null && (
+                    <div className='movieCard'>
+                      <img src={data.Poster} alt="Movie Poster"/>
+                    </div>
+                    )}
                 </div>
             </div>
 
