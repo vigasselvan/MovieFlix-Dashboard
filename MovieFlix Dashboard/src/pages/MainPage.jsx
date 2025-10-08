@@ -2,6 +2,7 @@ import Header from '../components/Header.jsx'
 import '../styles/styles.css'
 import Footer from '../components/Footer.jsx'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function MainPage(){
     const [MovieSearched, setMovieSearched] = useState('');
@@ -44,7 +45,7 @@ function MainPage(){
         }
     }
 
-    // const imgUrl = URL.createObjectURL(json.Poster);
+    const navigate = useNavigate();
 
     return (
         <>
@@ -59,8 +60,10 @@ function MainPage(){
 
                 <div>
                     {data !== null && (
-                    <div className='movieCard'>
-                      <img src={data.Poster} alt="Movie Poster"/>
+                    <div className='movieCard' onClick={() => navigate('/Movie-Page', { state: { movie: data } })}>
+                      <img src={data.Poster} alt="Movie Poster" />
+                      <h2>{data.Title}</h2>
+                      <h4><span className='released'>Released:</span> {data.Released}</h4>
                     </div>
                     )}
                 </div>
