@@ -13,7 +13,7 @@ function MainPage(){
       const fetchData = async () => {
         const parsedMovie = MovieSearched.replace(/ /g, '+');
         try {
-          let url = `http://www.omdbapi.com/?t=${parsedMovie}&plot=full`;
+          let url = `https://www.omdbapi.com/?t=${parsedMovie}&plot=full`;
           const apiKey = import.meta.env.VITE_API_URL;
           const response = await fetch(url + "&apikey=" + `${apiKey}`); // Replace with your API endpoint
           if (!response.ok) {
