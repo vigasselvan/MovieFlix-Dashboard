@@ -2,11 +2,8 @@
   "name": "movieflix-dashboard",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://vigasselvan.github.io/MovieFlix-Dashboard",
   "type": "module",
   "scripts": {
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
