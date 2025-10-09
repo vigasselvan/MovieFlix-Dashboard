@@ -30,7 +30,6 @@ function MainPage(){
           const storedData = JSON.parse(localStorage.getItem(json.Title));
           console.log(storedData);
           console.log(json.Poster);
-          // console.log(data);
         } catch (error) {
           console.log(error);
         }

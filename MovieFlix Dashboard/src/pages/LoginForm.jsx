@@ -12,7 +12,7 @@ function LoginForm(){
 
     return (
         <div className='wholePage'>
-            <Header className='headerLogin' />
+            <Header className='headerLogin'/>
             <div className='loginPage'>
                 <h1>Login</h1>
 

@@ -10,7 +10,7 @@ body{
   background-color: #1f2937;
   color: rgb(229,9,20);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   padding: 6px;
   opacity: 90%;
@@ -19,6 +19,10 @@ body{
 .header h1{
   margin: 15px;
   font-size: 36px;
+}
+
+.header h3{
+  margin-left: auto;
 }
 
 /* Login Page */
@@ -175,17 +179,25 @@ body{
 .leftAlign{
   max-width: 70vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
+  margin-top: 20px;
 }
 
 .leftMain{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-top: 16px;
 }
 
 .rightAlign{
   align-self: flex-end;
+}
+
+.genre{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .genre span{
@@ -201,5 +213,14 @@ body{
   background-color: gray;
   border: none;
   margin: 10px 0;
+}
+
+.imdb{
+  font-weight: 900;
+  color: #f5c518;
+}
+
+.leftMain a{
+  text-decoration: none;
 }
 
