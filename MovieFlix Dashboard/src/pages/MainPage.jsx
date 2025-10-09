@@ -1,7 +1,7 @@
 import Header from '../components/Header.jsx'
 import '../styles/styles.css'
 import Footer from '../components/Footer.jsx'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function MainPage(){
@@ -28,8 +28,6 @@ function MainPage(){
           }
           // Retrieving JSON data
           const storedData = JSON.parse(localStorage.getItem(json.Title));
-          console.log(storedData);
-          console.log(json.Poster);
         } catch (error) {
           console.log(error);
         }
@@ -43,6 +41,28 @@ function MainPage(){
             searchMovie();
         }
     }
+
+    useEffect(() => {
+      const allItems = {}; //storing all data in local storage to this variable
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        try {
+          // Attempt to parse as JSON, otherwise store as raw string
+          allItems[key] = JSON.parse(localStorage.getItem(key));
+        } catch (e) {
+          allItems[key] = localStorage.getItem(key);
+        }
+      }
+      console.log(allItems);
+
+      const avgRatingByGenre = {genre: [], rating: [], count: [], avg: []};
+      for(let i = 0; i < localStorage.length; i++){
+        const key = localStorage.key(i);
+        console.log(allItems[key]);
+      }
+    }, []); // Empty dependency array ensures this runs only once on mount
+
+
 
     const navigate = useNavigate();
 

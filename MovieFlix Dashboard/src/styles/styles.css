@@ -9,20 +9,35 @@ body{
 .header{
   background-color: #1f2937;
   color: rgb(229,9,20);
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 6px;
   opacity: 90%;
 }
 
 .header h1{
-  margin: 15px;
+  grid-column: 2;
+  justify-self: center;
+  margin: 10px;
   font-size: 36px;
+  cursor: pointer;
 }
 
 .header h3{
-  margin-left: auto;
+  grid-column: 3;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  justify-self: end;
+  margin: 10px 15px;
+  cursor: pointer;
+}
+
+.header h3:hover{
+  opacity: 75%;
+  background-color: #3c4c62;
+  color: #F9FAF8;
+  border-radius: 15px;
 }
 
 /* Login Page */
