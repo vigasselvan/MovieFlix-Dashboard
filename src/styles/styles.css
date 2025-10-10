@@ -24,21 +24,6 @@ body{
   cursor: pointer;
 }
 
-.header h3{
-  grid-column: 3;
-  box-sizing: border-box;
-  padding: 5px 15px;
-  justify-self: end;
-  margin: 10px 15px;
-  cursor: pointer;
-}
-
-.header h3:hover{
-  opacity: 75%;
-  background-color: #3c4c62;
-  color: #F9FAF8;
-  border-radius: 15px;
-}
 
 /* Login Page */
 
@@ -162,6 +147,21 @@ body{
 
 .movieCard h4 .released{
   opacity: 50%; 
+}
+
+.pieContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(201, 203, 207, 0.6);
+  color: #1f2937;
+  padding: 2vw;
+  border-radius: 15px;
+}
+
+.pieContainer h1{
+  margin: 0;
 }
 
 /* Movie Page */

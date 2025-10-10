@@ -19,8 +19,9 @@
       };
 
       return (
-        <div style={{ width: '40vw', margin: '20px auto' }}>
+        <div className='pieContainer' style={{ width: '40vw', margin: '20px auto' }}>
           <Pie data={chartData} options={options} />
+          <h1>Genres Distribution</h1>
         </div>
       );
     }
