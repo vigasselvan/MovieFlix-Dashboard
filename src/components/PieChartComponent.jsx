@@ -13,13 +13,13 @@
           },
           title: {
             display: true,
-            text: 'Your Pie Chart Title',
+            text: 'Genres Distribution',
           },
         },
       };
 
       return (
-        <div style={{ width: '600px', margin: '20px auto' }}>
+        <div style={{ width: '40vw', margin: '20px auto' }}>
           <Pie data={chartData} options={options} />
         </div>
       );

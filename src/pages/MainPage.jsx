@@ -96,7 +96,7 @@ function MainPage(){
         labels: genre,
         datasets: [
           {
-            label: '# of Votes',
+            label: 'count',
             data: count,
             backgroundColor: [
             'rgba(255, 99, 132, 0.6)',
@@ -106,14 +106,20 @@ function MainPage(){
             'rgba(153, 102, 255, 0.6)',  // purple
             'rgba(255, 159, 64, 0.6)',   // orange
             'rgba(201, 203, 207, 0.6)',  // gray
-            'rgba(0, 200, 83, 0.6)'
+            'rgba(0, 200, 83, 0.6)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
+              'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',   // blue
+            'rgba(255, 206, 86, 0.6)',   // yellow
+            'rgba(75, 192, 192, 0.6)',   // teal
+            'rgba(153, 102, 255, 0.6)',  // purple
+            'rgba(255, 159, 64, 0.6)',   // orange
+            'rgba(201, 203, 207, 0.6)',  // gray
+            'rgba(0, 200, 83, 0.6)',
             ],
             borderWidth: 1,
+            hoverOffset: 10,
           },
         ],
       };
@@ -127,7 +133,7 @@ function MainPage(){
             <div className='mainContent'>
                 <div className='searchArea'>
                     <input type="text" name="search" placeholder="Search Movie.." onKeyDown={checkClick} className='searchBox' value={MovieSearched}
-        onChange={(e) => setMovieSearched(e.target.value)}></input>
+                    onChange={(e) => setMovieSearched(e.target.value)}></input>
                     <button className='searchBtn' onClick={checkClick}>Search 🔍</button>
                 </div>
 
