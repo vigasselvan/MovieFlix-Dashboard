@@ -49,7 +49,7 @@ function MoviePage(){
                                 </span>
                             ))}</h3>
                             <hr className="flex-hr" />
-                            <h3><span className="imdb">IMDB</span>: <a href={imdbLink} target="_blank" rel="noopener">IMDB Website</a></h3>
+                            <h3><span className="imdb">IMDb</span>: <a href={imdbLink} target="_blank" rel="noopener">IMDB Website</a></h3>
                         </div>
                     </div>
                     <div className="rightAlign">
