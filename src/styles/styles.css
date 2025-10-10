@@ -2,6 +2,17 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+[data-theme='Light'] {
+  --background-color: #ffffff;
+  --text-color: #333333;
+}
+
+[data-theme='Dark'] {
+  --background-color: #333333;
+  --text-color: #ffffff;
 }
 
 /* header */
@@ -23,7 +34,19 @@ body{
   font-size: 36px;
   cursor: pointer;
 }
-
+  
+.header button{
+  grid-column: 3;
+  justify-self: flex-end;
+  margin-right: 2vw;
+  max-width: 6vw;
+  min-width: 5vw;
+  padding: 5px 15px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 23px;
+  font-size: 3vh;
+}
 
 /* Login Page */
 
@@ -64,6 +87,8 @@ body{
     padding: 1.5rem 1rem 0.5rem;
     margin-bottom: 27px;
     font-size: 18px;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .loginBtn{
@@ -94,9 +119,10 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 40px;
+  padding: 40px;
   min-width: 1.5;
-  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .searchArea{
@@ -112,7 +138,8 @@ body{
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  background-color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .searchBtn{
@@ -121,6 +148,7 @@ body{
   border: 2px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
+  color: inherit;
 }
 
 .movieCard{
@@ -167,12 +195,12 @@ body{
 /* Movie Page */
 
 .Moviedetails{
-  margin: 20px;
+  padding: 2vw;
   display: flex;
   flex-direction: column;
-
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
-
 .Moviedetails h1{
   margin-bottom: 6px;
   font-size: 50px;
