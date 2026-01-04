@@ -21,7 +21,7 @@
       return (
         <div className='pieContainer' style={{ width: '40vw', margin: '20px auto' }}>
           <Pie data={chartData} options={options} />
-          <h1>Genres Distribution</h1>
+          <div className='chartTitle'>{options.plugins.title.text}</div>
         </div>
       );
     }

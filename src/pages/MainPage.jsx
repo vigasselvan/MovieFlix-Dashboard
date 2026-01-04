@@ -127,7 +127,7 @@ function MainPage(){
     const navigate = useNavigate();
 
     return (
-        <>
+        <div className='mainPage'>
             <Header />
 
             <div className='mainContent'>
@@ -151,7 +151,7 @@ function MainPage(){
             </div>
 
             <Footer />
-        </>
+        </div>
     )
 }
 
